@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KasiOrder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <a href="#home">Home</a>
+    <a href="menu">Our Menu</a>
+    <a href="#order">Place an Order</a>
+</nav>
+<h1>KasiOrder</h1>
+<p>Your favourite kota, made your way.</p>
+<section id="menu">
+    <h2>Our menu</h2>
+    <p>Freshly made, just the way you like it.</p>
+    <div class="menu-item">
+        <h3>Kota</h3>
+        <p>A delicious township classic.</p>
+        <p>Price: R35.00</p>
+        <button type="button" id="add-kota">Add to Order</button>
+        <p id="order-message"></p>
+        <p id="kota-count">Kotas added: 0</p>
+        <p id="kota-subtotal">Kota subtotal: R0.00</p>
+    </div>
+    <div class="menu-item">
+        <h3>Chips</h3>
+        <p>Crispy golden chips.</p>
+        <p>Price: R15.00</p>
+        <button type="button" id="add-chips">Add to Order</button>
+    </div>
+</section>
+<section id="order">
+    <h2>Place Your Order</h2>
+    <p>Craving something delicious? Let's get your order started!</p>
+    <form>
+        <label for="customer-name">Your Name</label>
+        <input type="text" id="customer-name" name="customerName" required>
+
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+        <button type="submit">Place Order</button>
+    </form>
+</section>
+</body>
+<script src="script.js"></script>
+</html>
