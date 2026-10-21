@@ -2,7 +2,9 @@ console.log("KasiOrder is ready!");
 const kotaButton = document.getElementById("add-kota");
 const chipsButton = document.getElementById("add-chips");
 const removeKotaButton = document.getElementById("remove-kota");
+const removeChipsButton = document.getElementById("remove-chips");
 const removeKotaMessage = document.getElementById("remove-kota-order-message");
+const removeChipsMessage = document.getElementById("remove-chips-order-message");
 const kotaOrderMessage = document.getElementById("kota-order-message");
 const chipsOrderMessage = document.getElementById("chips-order-message");
 const kotaCountDisplay = document.getElementById("kota-count");
@@ -57,6 +59,24 @@ chipsButton.addEventListener("click", function () {
     chipsSubtotalDisplay.textContent = "Chips subtotal: " + "R" + chipsSubtotal.toFixed(2);
     updateTotal();
 
+})
+
+removeChipsButton.addEventListener("click", function () {
+    if (chipsQuantity > 0) {
+        console.log("Chips removed from order");
+        removeChipsMessage.textContent ="Chips removed from order";
+        chipsQuantity -= 1;
+    } else {
+        console.log("No chips in your order!");
+        removeChipsMessage.textContent = "No chips in your order!";
+    }
+
+    let chipsSubtotal = chipsPrice * chipsQuantity;
+    console.log(chipsSubtotal);
+    console.log(chipsQuantity);
+    chipsCountDisplay.textContent = "Chips added: " + chipsQuantity;
+    chipsSubtotalDisplay.textContent = "Chips subtotal: " + "R" +chipsSubtotal.toFixed(2);
+    updateTotal();
 })
 
 function updateTotal() {
