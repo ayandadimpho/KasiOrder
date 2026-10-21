@@ -1,6 +1,8 @@
 console.log("KasiOrder is ready!");
 const kotaButton = document.getElementById("add-kota");
 const chipsButton = document.getElementById("add-chips");
+const removeKotaButton = document.getElementById("remove-kota");
+const removeKotaMessage = document.getElementById("remove-kota-order-message");
 const kotaOrderMessage = document.getElementById("kota-order-message");
 const chipsOrderMessage = document.getElementById("chips-order-message");
 const kotaCountDisplay = document.getElementById("kota-count");
@@ -25,6 +27,24 @@ kotaButton.addEventListener("click", function () {
     kotaSubtotalDisplay.textContent = "Kotas subtotal: " + "R" +kotaSubtotal.toFixed(2);
     updateTotal();
 });
+
+removeKotaButton.addEventListener("click", function () {
+    if (kotaQuantity > 0) {
+        console.log("Kota removed from order");
+        removeKotaMessage.textContent ="Kota removed from order";
+        kotaQuantity -= 1;
+    } else {
+        console.log("No kotas in your order!");
+        removeKotaMessage.textContent = "No kotas in your order!";
+    }
+
+    let kotaSubtotal = kotaPrice * kotaQuantity;
+    console.log(kotaSubtotal);
+    console.log(kotaQuantity);
+    kotaCountDisplay.textContent = "Kotas added: " + kotaQuantity;
+    kotaSubtotalDisplay.textContent = "Kotas subtotal: " + "R" +kotaSubtotal.toFixed(2);
+    updateTotal();
+})
 
 chipsButton.addEventListener("click", function () {
     console.log("Chips added to order!");
